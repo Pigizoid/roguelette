@@ -1752,11 +1752,11 @@ int menu2(int character){
 	std::vector<int> eitems ={};
 	
 	int enemloot = 0;
-	if (ante<1){
+	if (ante<2){
 		enemloot = 0;
 	}
 	else{
-		enemloot = (ante-1)/2+rand()%2;
+		enemloot = (ante-2)/2+rand()%2;
 	}
 	
 	
@@ -1765,7 +1765,6 @@ int menu2(int character){
 	int lootrarity = 5;
 	
 	for (int i = 0; i<enemloot; i++){
-			
 		rarity = rand()%lootrarity;
 		//rarity = 1;
 		if (rarity != 0){
@@ -1801,19 +1800,17 @@ int menu2(int character){
 		std::this_thread::sleep_for(std::chrono::milliseconds(20));
 	}
 	printSGR(0);
-	
-	
-						
+		
 	siz = eitems.size();
 	for (int i = 0; i < siz; i++){
-		if (items[i] <lootsizes[0]){
+		if (eitems[i] <lootsizes[0]){
 			printSGR(37);
-		}else if (items[i] <lootsizes[1]){
+		}else if (eitems[i] <lootsizes[1]){
 			printSGR(31);
-		}else if (items[i] <lootsizes[2]){
+		}else if (eitems[i] <lootsizes[2]){
 			printSGR(1);
 			printSGR(33);
-		}else if (items[i] <lootsizes[3]){
+		}else if (eitems[i] <lootsizes[3]){
 			printSGR(1);
 			printSGR(6);
 			printSGR(35);
