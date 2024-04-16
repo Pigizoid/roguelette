@@ -1769,21 +1769,21 @@ int menu2(int character){
 		rarity = rand()%lootrarity;
 		//rarity = 1;
 		if (rarity != 0){
-			lootnum = rand()%commonconsumable.size();
-			lootnum = commonconsumable[lootnum];
+			lootnum = rand()%common_loot.size();
+			lootnum = common_loot[lootnum];
 		}else{
 			rarity = rand()%lootrarity;
 			if (rarity != 0){
-				lootnum = rand()%rareconsumable.size();
-				lootnum = rareconsumable[lootnum];
+				lootnum = rand()%rare_loot.size();
+				lootnum = rare_loot[lootnum];
 			}else{
 				rarity = rand()%lootrarity;
 				if (rarity != 0){
-					lootnum = rand()%epicconsumable.size();
-					lootnum = epicconsumable[lootnum];
+					lootnum = rand()%epic_loot.size();
+					lootnum = epic_loot[lootnum];
 				}else{
-					lootnum = rand()%wackyconsumable.size();
-					lootnum = wackyconsumable[lootnum];
+					lootnum = rand()%wacky_loot.size();
+					lootnum = wacky_loot[lootnum];
 				}
 			}
 		}
