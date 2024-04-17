@@ -23,12 +23,15 @@ void lineback(int len){
 	std::cout << std::string(len,'\b');
 }
 
-void clearterminal(){
+void screenreset(){
 	//std::cout<<"XXX";
+	/*
 	std::string start = "\x1b[";
 	std::string middle = std::to_string(2);
 	std::string end = "j";
 	std::cout<< start+middle+end;
+	*/
+	std::cout<< "\033[2J\033[1;1H";
 }
 
 
@@ -2016,7 +2019,6 @@ int menu2(int character){
 		
 		printSGR(0);
 		
-		
 		std::vector<int> visibchamber = {0,0};
 		visibchamber = visibcalc(character,items,eitems,lootsizes,gamestate,playerstatus,enemystatus,chambers);
 		
@@ -3008,7 +3010,7 @@ int menu2(int character){
 	
 	
 	}//entire game
-	clearterminal();
+	screenreset();
 	return 0;
 }
 
